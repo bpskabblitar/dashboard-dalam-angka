@@ -1,0 +1,390 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    line-height: 1.5;
+    color: #ffffff; 
+}
+
+.dashboard-wrapper {
+    min-height: 100vh;
+    background-color: #cd830c;
+    padding: 1.5rem; 
+}
+
+.dashboard-main-content {
+    max-width: 80rem;
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.dashboard-header {
+    text-align: center; 
+    margin-bottom: 2rem; 
+}
+
+.dashboard-header h1 {
+    font-size: 3.50rem; 
+    font-weight: 700; 
+    color: #ffffff; 
+    margin-bottom: 0.5rem; 
+}
+
+.dashboard-header p {
+    color: #f4f8ff;
+    font-size: 1.25rem; 
+}
+
+.filter-section-card {
+    background-color: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(12px); 
+    border-radius: 1rem; 
+    padding: 1.5rem; 
+    margin-bottom: 1.5rem; 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+}
+
+.filter-header-content {
+    display: flex; 
+    align-items: center; 
+    gap: 0.5rem; 
+    margin-bottom: 1rem;
+}
+
+.filter-header-icon {
+    width: 1.85rem; 
+    height: 1.85rem; 
+    color: #60a5fa; 
+}
+
+.filter-header-title {
+    font-size: 1.8rem; 
+    font-weight: 600; 
+    color: #ffffff; 
+}
+
+.filter-grid-container {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 1.5rem; 
+}
+@media (min-width: 768px) { 
+    .filter-grid-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.filter-group label {
+    display: block;
+    color: white;
+    font-size: 1.125rem; 
+    font-weight: 600; 
+    margin-bottom: 0.75rem; 
+}
+
+.filter-select-wrapper {
+    position: relative; 
+}
+
+.filter-select {
+    width: 100%; 
+    background-color: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); 
+    border: 2px solid rgba(255, 255, 255, 0.2); 
+    border-radius: 0.75rem; 
+    padding: 1rem 1.5rem; 
+    color: white;
+    font-size: 1.125rem; 
+    appearance: none; 
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1.5rem center; 
+    background-size: 1em; 
+}
+
+.filter-select:focus {
+    box-shadow: 0 0 0 2px #3b82f6; 
+}
+
+.filter-select:hover {
+    background-color: rgba(255, 255, 255, 0.2);; 
+}
+
+.filter-select option {
+    background-color: #1e293b; 
+    color: #ffffff;
+}
+
+.filter-chevron-icon {
+    position: absolute; 
+    right: 0.75rem; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 1.25rem; 
+    height: 1.25rem; 
+    color: #9ca3af; 
+    pointer-events: none; 
+}
+
+.active-filters-container {
+    margin-top: 1rem; 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 0.5rem; 
+}
+
+.active-filter-label {
+    font-size: 0.875rem; 
+    color: #d1d5db; 
+}
+
+.active-filter-badge {
+    padding: 0.25rem 0.75rem; 
+    border-radius: 9999px; 
+    font-size: 0.875rem; 
+}
+.active-filter-badge.umur {
+    background-color: rgba(59, 130, 246, 0.2); 
+    color: #93c5fd; 
+}
+.active-filter-badge.kota {
+    background-color: rgba(16, 185, 129, 0.2); 
+    color: #6ee7b7; 
+}
+.active-filter-badge.produk {
+    background-color: rgba(139, 92, 246, 0.2); 
+    color: #c4b5fd; 
+}
+
+.stats-cards-grid {
+    gap: 1rem; 
+    margin-bottom: 1.5rem; 
+}
+@media (min-width: 768px) { 
+    .stats-cards-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+.stat-card {
+    border-radius: 0.75rem; 
+    padding: 1.5rem; 
+    color: #ffffff; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+}
+.stat-card.blue {
+    background: linear-gradient(to bottom right, #3b82f6, #2563eb); 
+}
+.stat-card.green {
+    background: linear-gradient(to bottom right, #22c55e, #16a34a); 
+}
+.stat-card.purple {
+    background: linear-gradient(to bottom right, #a855f7, #9333ea); 
+}
+.stat-card.orange {
+    background: linear-gradient(to bottom right, #f97316, #ea580c); 
+}
+
+.stat-card p.label {
+    font-size: 2rem;
+    font-weight: 700;  
+    opacity: 0.9; 
+    margin-left: 0.75rem;
+}
+
+.stat-card p.desc {
+    font-size: 1.5rem; 
+    font-weight: 500; 
+    margin-top: 0.25rem;
+    margin-left: 0.75rem; 
+}
+.stat-card.green p.value,
+.stat-card.purple p.value {
+    font-size: 1.5rem; 
+}
+
+.stat-card .lucide-icon {
+    width: 3rem; 
+    height: 3rem; 
+    opacity: 0.5; 
+}
+
+.charts-grid {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 1.5rem; 
+    margin-bottom: 1.5rem; 
+}
+@media (min-width: 1024px) { 
+    .charts-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.chart-card {
+    background-color: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); 
+    border-radius: 1rem; 
+    padding: 1.5rem; 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); 
+    margin-top: 1.5rem;
+}
+
+.chart-title {
+    font-size: 1.5rem; 
+    font-weight: 700; 
+    color: white;
+    margin-bottom: 1.5rem; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+    padding-bottom: 0.75rem; 
+}
+
+.chart-card h3 {
+    font-size: 1.25rem; 
+    font-weight: 700; 
+    color: #ffffff; 
+    margin-bottom: 1rem;
+}
+
+.recharts-cartesian-grid line {
+    stroke: #ffffff20 !important; 
+}
+.recharts-cartesian-axis-tick-value tspan {
+    fill: #fff !important; 
+}
+.recharts-tooltip-wrapper {
+    background-color: #1e293b; 
+    border: none;
+    border-radius: 8px;
+    color: #fff; 
+}
+
+.chart-description {
+  font-size: 16px;
+  color: #eef5ff; 
+  margin-bottom: 1rem;
+  font-style: italic; 
+}
+
+.data-table-card {
+    background-color: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(12px); 
+    border-radius: 1rem; 
+    padding: 1.5rem; 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    overflow: hidden; 
+}
+
+.data-table-card h3 {
+    font-size: 1.25rem; 
+    font-weight: 700; 
+    color: #ffffff; 
+    margin-bottom: 1rem;
+}
+
+.table-responsive {
+    overflow-x: auto; 
+}
+
+.data-table {
+    width: 100%; 
+    font-size: 0.875rem; 
+}
+
+.data-table thead tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+}
+
+.data-table th {
+    padding: 0.75rem 1rem;
+    text-align: left; 
+    color: #ffffff; 
+    font-weight: 600; 
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    transition: background-color 0.2s ease-in-out; 
+}
+
+.data-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05); 
+}
+
+.data-table td {
+    padding: 0.75rem 1rem;
+    color: #e2e8f0; 
+}
+
+.data-table td.font-semibold {
+    font-weight: 600; 
+}
+
+.placeholder-card {
+    background-color: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(10px); 
+    border-radius: 1rem; 
+    padding: 4rem; 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    text-align: center; 
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); 
+}
+
+.placeholder-content {
+    color: #d4dae3; 
+    font-size: 1.5rem; 
+    font-weight: 300; 
+}
+
+.placeholder-icon-margin {
+    width: 4rem; 
+    height: 4rem; 
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-bottom: 1rem;
+}
+
+.placeholder-text-margin {
+    margin-bottom: 0.5rem; 
+}
+
+.icon-large {
+    width: 3rem; 
+    height: 3rem;
+}
+
+.placeholder-card .icon-large {
+    width: 4rem; 
+    height: 4rem; 
+}
