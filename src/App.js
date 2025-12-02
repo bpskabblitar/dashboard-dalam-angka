@@ -55,7 +55,7 @@ const App = () => {
     const percentText = `${(percent * 100).toFixed(1)}%`;
 
     return (
-      <text x={x} y={y} fill="#101828" textAnchor={textAnchor} dominantBaseline="central" fontSize="16px" fontWeight="500">
+      <text x={x} y={y} fill="#131313ff" textAnchor={textAnchor} dominantBaseline="central" fontSize="16px" fontWeight="500">
         {`${name} (${percentText})`}
       </text>
     );
@@ -148,7 +148,7 @@ const App = () => {
                 dataKey="value"
               >
                 {chartItem.data.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke="#ffffff" strokeWidth={2} />
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke="#ffffffff" strokeWidth={2} />
                 ))}
               </Pie>
               <Tooltip content={<CustomTooltip />} />

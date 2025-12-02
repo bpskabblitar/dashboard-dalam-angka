@@ -348,3 +348,10 @@ body {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+/* --- Tambahan untuk Label Pie Chart --- */
+.pie-chart-label {
+    fill: #101828 !important; /* Memaksa warna menjadi gelap */
+    font-size: 14px;
+    font-weight: 700; /* Bold */
+}
