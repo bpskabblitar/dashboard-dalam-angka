@@ -2,7 +2,7 @@
   "name": "web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://lofianrafi845.github.io/dashboard-dalam-angka",
+  "homepage": "https://bpskabblitar.github.io/dashboard-dalam-angka",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
