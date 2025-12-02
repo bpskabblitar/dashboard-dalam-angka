@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Grid3x3, Filter } from 'lucide-react';
-// Import icons needed for the mapping
+import { Grid3x3, X, Filter } from 'lucide-react';
 import { Book } from 'lucide-react'; 
-
 import { 
   BarChart, Bar, LineChart, Line, PieChart, Pie, Cell, AreaChart, Area, 
   XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, 
@@ -15,13 +13,14 @@ const App = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedSubCategory, setSelectedSubCategory] = useState('');
 
+  const [showMobileFilter, setShowMobileFilter] = useState(false);
+
   const COLORS = ['#465fff', '#12b76a', '#f79009', '#f04438', '#0ba5ec', '#ee46bc'];
 
   useEffect(() => {
     setSelectedSubCategory('');
   }, [selectedCategory]);
 
-  // Tooltip Custom: Menggunakan style CSS (class tooltip-container) yang sudah diubah ke tema terang
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
       return (
@@ -38,7 +37,6 @@ const App = () => {
     return null;
   };
 
-  // Label Line Chart: Ubah fill menjadi gelap (#101828)
   const renderLineLabel = useCallback(({ x, y, value }) => {
     if (value === null || value === undefined) return null;
     return (
@@ -48,7 +46,6 @@ const App = () => {
     );
   }, []);
 
-  // Label Pie Chart: Ubah fill menjadi gelap (#101828)
   const renderPieCustomizedLabel = useCallback(({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, fill }) => {
     const RADIAN = Math.PI / 180;
     const radius = outerRadius + 20; 
@@ -64,7 +61,6 @@ const App = () => {
     );
   }, []);
 
-  // Label Bar Chart: Ubah fill menjadi gelap (#101828)
   const renderBarLabel = useCallback(({ x, y, width, value }) => {
     if (!value) return null;
     return (
@@ -75,12 +71,9 @@ const App = () => {
   }, []);
 
   const ChartRenderer = ({ chartItem }) => {
-    // Grid: Abu-abu sangat muda (#e4e7ec)
     const cartesianProps = { strokeDasharray: "3 3", stroke: "#e4e7ec" }; 
-    // Axis Lines & Text: Abu-abu gelap (#475467 dan #101828)
     const axisProps = { stroke: "#475467", fontSize: 20, tickLine: false, axisLine: false }; 
     
-    // Legend style (border abu muda)
     const legendStyle = {
       fontSize: '16px',
       border: '1px solid #e4e7ec',
@@ -2345,13 +2338,38 @@ const currentCategoryData = contentData[selectedCategory];
   return (
     <div className="dashboard-wrapper">
       <div className="dashboard-main-content">
+
+        <div className="mobile-header-controls">
+            <button 
+                className="mobile-filter-btn"
+                onClick={() => setShowMobileFilter(true)}
+            >
+                <Filter size={20} />
+                <span>Filter Data</span>
+            </button>
+        </div>
         
         <div className="dashboard-layout">
 
-          <aside className="filter-section-card">
+          {showMobileFilter && (
+            <div 
+                className="filter-backdrop" 
+                onClick={() => setShowMobileFilter(false)} 
+            />
+          )}
+
+          <aside className={`filter-section-card ${showMobileFilter ? 'mobile-open' : ''}`}>
             <div className="filter-header-content">
-              <Filter className="filter-header-icon" />
-              <h3 className="filter-header-title">Filter</h3>
+              <div className="flex items-center gap-2">
+                <Filter className="filter-header-icon" />
+                <h3 className="filter-header-title">Filter</h3>
+              </div>
+              <button 
+                className="mobile-close-btn" 
+                onClick={() => setShowMobileFilter(false)}
+              >
+                <X size={24} />
+              </button>
             </div>
             
             <div className="filter-grid-container">
