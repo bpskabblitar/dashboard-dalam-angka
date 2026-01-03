@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/dashboard-dalam-angka/static/css/main.6996690c.css",
-    "main.js": "/dashboard-dalam-angka/static/js/main.8531311e.js",
+    "main.js": "/dashboard-dalam-angka/static/js/main.146362cf.js",
     "static/js/453.8894421c.chunk.js": "/dashboard-dalam-angka/static/js/453.8894421c.chunk.js",
     "index.html": "/dashboard-dalam-angka/index.html",
     "main.6996690c.css.map": "/dashboard-dalam-angka/static/css/main.6996690c.css.map",
-    "main.8531311e.js.map": "/dashboard-dalam-angka/static/js/main.8531311e.js.map",
+    "main.146362cf.js.map": "/dashboard-dalam-angka/static/js/main.146362cf.js.map",
     "453.8894421c.chunk.js.map": "/dashboard-dalam-angka/static/js/453.8894421c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6996690c.css",
-    "static/js/main.8531311e.js"
+    "static/js/main.146362cf.js"
   ]
 }
